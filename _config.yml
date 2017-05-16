@@ -1,3 +1,4 @@
+baseurl: /notes
 name: Zhu Qingguang
 markdown: kramdown
 permalink: /notes/:year/:month/:day/:title
