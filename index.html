@@ -1,42 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>朱庆广的个人网站</title>
-    <link rel="stylesheet" href="/assets/css/home.css">
-  </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <h1>朱庆广的个人网站</h1>
-        <p>Zhu Qingguang's Personal Website</p>
-      </header>
-      <nav>
-        <ul>
-          <li> >> </li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/about">/ About</a></li>
-        </ul>
-      </nav>
-      <footer>
-        <ul>
-          <li><a href="/">Contact</a></li>
-          <li>|</li>
-          <li>zhuqingguang.github.io</li>
-        </ul>
-      </footer>
-    </div>
-    <script>
-      function changeBackground(){
-        var body = document.body;
-        body.style.backgroundSize = "cover";
-        body.style.backgroundRepeat = "no-repeat";
-        body.style.backgroundImage = "url(/assets/home-image/"+ Math.ceil(Math.random() * 11)+".jpg)";
-      }
-      // changeBackground();
-      setInterval(changeBackground, 3000);
-    </script>
-  </body>
-
-</html>
+---
+layout: default
+title: Zhu Qingguang's Blog
+---
+<h1>{{ page.title }}</h1>
+<ul class="posts">
+  {% for post in site.posts %}
+    <li>
+      <span>{{ post.data | data_to_string }}</span> >>
+      <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li>
+  {% endfor%}
+</ul>
