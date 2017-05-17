@@ -79,11 +79,11 @@ date: 2017-05-17
 ## absolute centering
 - html
 ```
-<div class="container">
-  <div class="content">
-    // Content
+  <div class="container">
+    <div class="content">
+      // Content
+    </div>
   </div>
-</div>
 ```
 - css
 ```
