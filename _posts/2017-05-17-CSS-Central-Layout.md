@@ -98,7 +98,7 @@ date: 2017-05-17
   }
 ```
 
-**注意**: 当没有指定内容块的具体的高度和宽度时，内容块会填满剩余空间。可以通过使用``max-height``来限制高度，也可以通过 display:table 来使高度由内容来决定，但是浏览器支持不是很好。
+ **注意**: 当没有指定内容块的具体的高度和宽度时，内容块会填满剩余空间。可以通过使用``max-height``来限制高度，也可以通过 display:table 来使高度由内容来决定，但是浏览器支持不是很好。
  - Not compatible with the Resizing technique.
  - Firefox/IE8: Using display: table aligns the content block to the top, but is still centered horizontally.
  - IE9/10: Using display: table aligns the content block to the top left.
@@ -125,7 +125,7 @@ date: 2017-05-17
   }
 ```
 
-**缺点**:需要知道具体的高度和宽度
+ **缺点**:需要知道具体的高度和宽度
 
 ## Transform
 ```
@@ -138,7 +138,7 @@ date: 2017-05-17
             transform: translate(-50%,-50%);
   }
 ```
-这里translate的百分比是相对于自身的，所以高度是可变的
+ 这里translate的百分比是相对于自身的，所以高度是可变的
 
 
 ## Table-Cell
@@ -166,7 +166,7 @@ date: 2017-05-17
   }
 ```
 
-**注意**: 需要添加最内层的div，并且给div指定宽度和margin:0 auto;来使div居中。
+ **注意**: 需要添加最内层的div，并且给div指定宽度和margin:0 auto;来使div居中。
 
 ## Inline-Block
 - html
@@ -224,4 +224,4 @@ date: 2017-05-17
     align-items: center;
   }
  ```
-最方便最简单的方式，但是要注意浏览器的支持
+ 最方便最简单的方式，但是要注意浏览器的支持
