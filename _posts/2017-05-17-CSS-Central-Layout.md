@@ -85,6 +85,7 @@ date: 2017-05-17
     </div>
   </div>
 ```
+
 - css
 ```
   .container {
@@ -96,6 +97,7 @@ date: 2017-05-17
       top: 0; left: 0; bottom: 0; right: 0;
   }
 ```
+
 **注意**: 当没有指定内容块的具体的高度和宽度时，内容块会填满剩余空间。可以通过使用``max-height``来限制高度，也可以通过 display:table 来使高度由内容来决定，但是浏览器支持不是很好。
  - Not compatible with the Resizing technique.
  - Firefox/IE8: Using display: table aligns the content block to the top, but is still centered horizontally.
@@ -109,6 +111,7 @@ date: 2017-05-17
     //Content
   </div>
 ```
+
 - css
 ```
   .isNegative {
@@ -121,6 +124,7 @@ date: 2017-05-17
       margin-top: -150px;
   }
 ```
+
 **缺点**:需要知道具体的高度和宽度
 
 ## Transform
@@ -148,6 +152,7 @@ date: 2017-05-17
     </div>
   </div>
 ```
+
 - css
 ```
   .Center-Container.is-Table { display: table; }
@@ -160,6 +165,7 @@ date: 2017-05-17
     margin: 0 auto;
   }
 ```
+
 **注意**: 需要添加最内层的div，并且给div指定宽度和margin:0 auto;来使div居中。
 
 ## Inline-Block
@@ -171,6 +177,7 @@ date: 2017-05-17
     </div>
   </div>
 ```
+
 - css
 ```
   .Center-Container.is-Inline {
