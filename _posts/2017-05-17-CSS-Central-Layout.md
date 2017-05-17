@@ -87,14 +87,14 @@ date: 2017-05-17
 ```
 - css
 ```
-.container {
-  position: relative;
-}
-.content {
-  position: absolute;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
-}
+  .container {
+      position: relative;
+  }
+  .content {
+      position: absolute;
+      margin: auto;
+      top: 0; left: 0; bottom: 0; right: 0;
+  }
 ```
 **注意**: 当没有指定内容块的具体的高度和宽度时，内容块会填满剩余空间。可以通过使用``max-height``来限制高度，也可以通过 display:table 来使高度由内容来决定，但是浏览器支持不是很好。
  - Not compatible with the Resizing technique.
@@ -105,113 +105,115 @@ date: 2017-05-17
 ## Negative margins
 - html
 ```
-<div class="isNegative">
-  //Content
-</div>
+  <div class="isNegative">
+    //Content
+  </div>
 ```
 - css
 ```
-.isNegative {
-  position: relative;
-  width: 200px;
-  height: 300px;
-  left: 50%;
-  top: 50%;
-  margin-left: -100px;
-  margin-top: -150px;
-}
+  .isNegative {
+      position: relative;
+      width: 200px;
+      height: 300px;
+      left: 50%;
+      top: 50%;
+      margin-left: -100px;
+      margin-top: -150px;
+  }
 ```
 **缺点**:需要知道具体的高度和宽度
 
 ## Transforms
 ```
-.content {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
-}
+  .content {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
 ```
 这里translate的百分比是相对于自身的，所以高度是可变的
 
 ##Table-Cell
 - html
 ```
-<div class="Center-Container is-Table">
-  <div class="Table-Cell">
-    <div class="Center-Block">
-    <!-- CONTENT -->
+  <div class="Center-Container is-Table">
+    <div class="Table-Cell">
+      <div class="Center-Block">
+      <!-- CONTENT -->
+      </div>
     </div>
   </div>
-</div>
 ```
+- css
 ```
-.Center-Container.is-Table { display: table; }
-.is-Table .Table-Cell {
-  display: table-cell;
-  vertical-align: middle;
-}
-.is-Table .Center-Block {
-  width: 50%;
-  margin: 0 auto;
-}
+  .Center-Container.is-Table { display: table; }
+  .is-Table .Table-Cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .is-Table .Center-Block {
+    width: 50%;
+    margin: 0 auto;
+  }
 ```
 **注意**: 需要添加最内层的div，并且给div指定宽度和margin:0 auto;来使div居中。
 
 ##Inline-Block
 - html
 ```
-<div class="Center-Container is-Inline">
-  <div class="Center-Block">
-    <!-- CONTENT -->
+  <div class="Center-Container is-Inline">
+    <div class="Center-Block">
+      <!-- CONTENT -->
+    </div>
   </div>
-</div>
 ```
 - css
 ```
-.Center-Container.is-Inline {
-  text-align: center;
-  overflow: auto;
-}
+  .Center-Container.is-Inline {
+    text-align: center;
+    overflow: auto;
+  }
 
-.Center-Container.is-Inline:after,
-.is-Inline .Center-Block {
-  display: inline-block;
-  vertical-align: middle;
-}
+  .Center-Container.is-Inline:after,
+  .is-Inline .Center-Block {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.Center-Container.is-Inline:after {
-  content: '';
-  height: 100%;
-  margin-left: -0.25em; /* To offset spacing. May vary by font */
-}
+  .Center-Container.is-Inline:after {
+    content: '';
+    height: 100%;
+    margin-left: -0.25em; /* To offset spacing. May vary by font */
+  }
 
-.is-Inline .Center-Block {
-  max-width: 99%; /* Prevents issues with long content causes the content block to be pushed to the top */
-  /* max-width: calc(100% - 0.25em) /* Only for IE9+ */
-}
+  .is-Inline .Center-Block {
+    max-width: 99%; /* Prevents issues with long content causes the content block to be pushed to the top */
+    /* max-width: calc(100% - 0.25em) /* Only for IE9+ */
+  }
 ```
  - 空内容也会占据一定空间，需要margin-left:-0.25em;来抵消偏移
  - 内容块的最大宽度不能是100%，否则会把::after的内容挤到下一行
 
- ##Flex
- - html
+##Flex
+- html
  ```
- <div class="contain">
-   <div class="content">
-      // content
+   <div class="contain">
+     <div class="content">
+        // content
+     </div>
    </div>
- </div>
  ```
- - css
+ 
+- css
  ```
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
  ```
 最方便最简单的方式，但是要注意浏览器的支持
