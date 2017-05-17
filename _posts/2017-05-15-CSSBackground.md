@@ -4,7 +4,6 @@ title: "CSS背景总结"
 date: 2017-05-15
 ---
 
-## background总结
 ### 设置背景内容
 - background-color: grba() | red | #ddd;
 - background-image: url();
@@ -27,3 +26,6 @@ date: 2017-05-15
   **值得注意的是**，取值为cover时，切换背景图片会产生拉伸或者缩放的动画效果
 - **background-clip**: border-box | padding-box | content-box;
   设置背景裁剪的范围，取值是与盒模型相对应的。
+
+### 设置背景重复
+- **background-repeat**: repeat | no-repeat | round | space | repeat-x | repeat-y;
