@@ -123,7 +123,7 @@ date: 2017-05-17
 ```
 **缺点**:需要知道具体的高度和宽度
 
-## Transforms
+## Transform
 ```
   .content {
       position: relative;
@@ -136,7 +136,8 @@ date: 2017-05-17
 ```
 这里translate的百分比是相对于自身的，所以高度是可变的
 
-##Table-Cell
+
+## Table-Cell
 - html
 ```
   <div class="Center-Container is-Table">
@@ -161,7 +162,7 @@ date: 2017-05-17
 ```
 **注意**: 需要添加最内层的div，并且给div指定宽度和margin:0 auto;来使div居中。
 
-##Inline-Block
+## Inline-Block
 - html
 ```
   <div class="Center-Container is-Inline">
@@ -197,7 +198,7 @@ date: 2017-05-17
  - 空内容也会占据一定空间，需要margin-left:-0.25em;来抵消偏移
  - 内容块的最大宽度不能是100%，否则会把::after的内容挤到下一行
 
-##Flex
+## Flex
 - html
  ```
    <div class="contain">
@@ -206,7 +207,7 @@ date: 2017-05-17
      </div>
    </div>
  ```
- 
+
 - css
  ```
   .container {
