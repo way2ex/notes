@@ -4,8 +4,8 @@ title: "CSS居中总结"
 date: 2017-05-17
 ---
 
-## 各种方式对比总结
 [原文](https://codepen.io/shshaw/full/gEiDt)
+## 各种方式对比总结
 <table class="table">
         <thead>
           <tr>
