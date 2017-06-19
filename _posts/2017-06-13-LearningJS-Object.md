@@ -3,6 +3,7 @@ layout: post
 title: "JS学习之创建对象"
 date: 2017-06-13
 categories: [JavaScript, MyNotes]
+
 ---
 
 ## 理解对象
@@ -265,3 +266,38 @@ function Person(name, age){
 }
 ```
 这样，对于原型的设置只会在第一次创建实例对象时起作用，并且能反映到所有的实例中。
+
+### 寄生构造函数模式
+寄生模式就是将创建对象的代码封装到一个函数中，然后在函数中创建一个对象，最后返回该新建的对象。
+```
+function Person(name, age){
+	var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.sayName = function(){
+    	console.log(this.name);
+    };
+    return o;
+}
+
+var person = new Person("Bob", 18);
+person.sayName();     //  Bob
+```
+寄生模式可以用在希望能对某个对象来进行扩展的情况。比如想创建一个具有额外方法的数组对象，就可以将上面代码中的Object()替换为Array()，然后对新建的对象添加属性和方法。
+
+### 稳妥构造函数模式
+稳妥对象，指的是没有公共属性，其方法也不引用this的对象。
+```
+function Person(name, age){
+	var o = new Object();
+    // 可以在这里定义私有变量和函数
+    
+    // 添加方法
+    o.sayName = function(){
+    	console.log(name);   // 没有使用this，而是直接访问私有变量
+    }
+    return o;      // 返回对象
+}
+
+var person = Person("Bob", 19);
+```
