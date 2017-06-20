@@ -187,3 +187,25 @@ module.exports = function (message) {
     "main": "./lib/echo.js"
 }
 ```
+
+### npm相关命令
+- 安装包
+```
+npm install <package>@<version>
+```
+
+- 使用帮助
+```
+npm help
+```
+
+- 更新包
+```
+npm update <package>
+```
+
+- 清空缓存
+```
+npm cache clear
+```
+

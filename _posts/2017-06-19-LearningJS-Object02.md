@@ -116,3 +116,68 @@ SubType.prototype.sayAge = function(){
 }
 ```
 其实如果不考虑实例的constructor属性和子类原型对象的指向，直接令子类原型等于父类原型也可以达到同样的目的，只是那样，在子类原型上添加的方法也就添加到了父类的原型上，也就更改了父类原型，而继承也就无从谈起了。
+
+## Object常用的相关方法总结
+### 对象属性及其特性
+#### Object.defineProperty()
+该方法接收三个参数: 要定义属性的对象，属性名和描述符对象。
+```
+var book = {
+	_year: 2005,
+    edition: 1
+};
+Object.defineProperty(book, "year", {
+	configurable: false,
+    enumerable: true,
+    get: function(){return 3;},
+    set: function(value){this._year = value;}
+});
+```
+
+#### Object.defineProperties()
+该方法接收两个参数： 要添加属性的方法和属性及其描述符对象
+```
+var book = {};
+Object.defineProperties(book, {
+	_year: {
+    	writable: true,
+        value: 2005
+    },
+    edition: {
+    	writable: true,
+        value: 2
+    },
+    year: {
+    	get: function(){return this._year;},
+        set: function(value){this._year = value;}
+    }
+});
+```
+
+#### Object.getOwnPropertyDescriptor()
+该方法可以获得对象中属性的描述符。
+接收两个参数：属性所在的对象和要读取其描述符的属性名称。
+
+### 原型相关
+#### isPrototypeOf()
+该方法用于判断当前对象是否是参数对象的原型
+```
+var person = {};
+console.log(Object.prototype.isPrototypeOf(person));     // true
+```
+
+#### hasOwnProperty()
+该方法用于判断给定属性是否是当前对象的实例属性。
+该方法接收一个参数： 要判断的属性名。
+
+#### in操作符
+in操作符用于判断属性是否存在于对象中，而无论属性是原型属性还是实例属性
+
+#### Object.keys()
+该方法接受一个对象作参数，返回一个包含所有可枚举属性的字符串的数组。
+
+#### Object.getOwnPropertyNames()
+可以得到所有的实例属性，包括不可枚举属性。
+
+#### Object.create()
+该方法用于原型式继承，可接受两个参数：作为新对象原型的对象和一个为新对象定义额外属性的对象。
