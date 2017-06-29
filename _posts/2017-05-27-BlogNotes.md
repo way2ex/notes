@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "日常笔记之搭建博客"
+title: "jekyll搭建博客"
 date: 2017-05-27
 categories: MyNotes
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "日常笔记"
+title: "元素的位置和鼠标事件的属性"
 date: 2017-05-23
 categories: [Web API, MyNotes]
 
@@ -9,16 +9,6 @@ categories: [Web API, MyNotes]
 ## 概念
 - MouseEvent.clientX:
 获取鼠标点击时相对于屏幕的水平坐标，页面发生滚动时不考虑滚动，各个浏览器都实现了基本功能
-
-
-- MouseEvent.X:
-等同于clientX,但是是一个新标准
-
-
-- **Element.style.cssText**:
-仅仅用于返回或者设置元素的行内样式字符串
-	还有一个cssText,是CSSStyleDeclaraion.cssText,将会返回stylesheet中的字符串
-
 
 - event.stopPropagation() :
 防止事件传播
@@ -70,4 +60,8 @@ categories: [Web API, MyNotes]
 
 - MouseEvent.pageX & MouseEvent.pageY:
 鼠标点击发生的地方相对于页面的距离，包括滚动后的距离
--
+
+### mouseenter和mouseover的区别
+mouseenter不会冒泡，发生在某个元素后，不会传递给父元素
+而mouseover会，如果发生在子元素上，也会冒泡到父元素。
+**注意**:mouseenter的性能是有问题的，因为会不停的在不同的层级的元素上触发
