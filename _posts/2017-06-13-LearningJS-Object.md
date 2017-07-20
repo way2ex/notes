@@ -306,7 +306,7 @@ Object instanceof Function  		   // true
 
 ```
 
-<img src="notes/assets/blog_images/20170613-01.png">
+<img src="/notes/assets/blog_images/20170613-01.png">
 
 看下面的代码
 
