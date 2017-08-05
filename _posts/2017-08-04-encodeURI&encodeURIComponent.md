@@ -54,4 +54,4 @@ URI字符分为
 document.querySelector("button").onclick = function(){
 	alert('haha')
 }
-<script>
+</script>
