@@ -46,12 +46,4 @@ URI字符分为
 - uri转义字符
 	uri转义字符指 ``%xx``这种形式的字符，其中``xx``代表十六进制的数字，即0-9和A-F
     ``encodeURI``和``encodeURIComponent``均会进行编码
-    
 
-<div>markdown可以放进可运行的代码吗？</div>
-<button>点击我</button>
-<script>
-document.querySelector("button").onclick = function(){
-	alert('haha')
-}
-</script>
